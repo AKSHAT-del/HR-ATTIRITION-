@@ -1,0 +1,91 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>HR Attrition Predictions</title>
+  </head>
+  <body bgcolor="#97D9E1">
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">HR Attrition Predictions</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      </ul>
+  </div>
+</nav>
+
+<div class="container">
+    <h2 class="text-center mt-3"><u>HR Attrition Predictions</u></h2>
+    <h4 class="text-center mt-1"><u>Made By Akshat Goyal</u></h4>
+    <form action="{{ url_for('predict')}}" method="POST">
+  <div class="form-group">
+    <label for="workingyears">Total Working Years</label>
+    <input type="text" class="form-control" id="workingyears" name="workingyears" placeholder="Enter Total Working Years">
+  </div>
+  <div class="form-group">
+    <label for="hourlyrate">Enter Hourly Rate</label>
+    <input type="text" class="form-control" id="hourlyrate" name="hourlyrate" placeholder="Enter  Hourly Rate">
+  </div>
+  <div class="form-group">
+    <label for="monthlyrate">Enter Monthly Rate</label>
+    <input type="text" class="form-control" id="monthlyrate" name="monthlyrate" placeholder="Enter Monthly Rate.">
+  </div>
+  
+  <div class="form-group">
+    <label for="jobrole">Select Job Role</label>
+    <select class="form-control custom-select" name="jobrole" id="jobrole">
+      <option value="0">Health Care Representative</option>
+      <option value="1">Human Resource</option>
+      <option value="2">Laboratory Technician</option>
+      <option value="3">Manager</option>
+      <option value="4">Manufacturing Director</option>
+      <option value="5">Research Director</option>
+      <option value="6">Research Scientist</option>
+      <option value="7">Sales Excutive/option>
+      <option value="8">Sale Representative</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="overtime">Have You Worked Over Time</label>
+    <select class="form-control custom-select" name="overtime" id="overtime">
+      <option value="0">No</option>
+      <option value="1">Yes</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="percentsalaryhike">Enter Percent Salary Hike</label>
+    <input type="text" class="form-control" id="percentsalaryhike" name="percentsalaryhike" placeholder="Enter your Percent Salary Hike">
+  </div>
+  <div class="form-group">
+    <label for="yearswithcurrManager">Enter your Years of Working with Current Manager</label>
+    <input type="text" class="form-control" id="yearswithcurrmanager" name="yearswithcurrmanager" placeholder="Enter your Years of Working with Current Manager">
+  </div>
+  
+    </select>
+  </div>
+ <center><button class="btn btn-success">Sumbit</button></center>
+  <br><br>
+  </form>
+  <p><b>Predicted Result is given below:</b></p><br>
+  <b><u>{{output}}</b></u><br>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
